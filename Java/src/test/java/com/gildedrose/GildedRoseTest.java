@@ -227,25 +227,25 @@ class GildedRoseTest {
             {
                 final Item item = app.items[27];
                 assertEquals("Conjured item 2", item.name);
-                assertEquals(9, item.quality);
+                assertEquals(8, item.quality);
                 assertEquals(1, item.sellIn);
             }
             {
                 final Item item = app.items[28];
                 assertEquals("Conjured item 1", item.name);
-                assertEquals(9, item.quality);
+                assertEquals(8, item.quality);
                 assertEquals(0, item.sellIn);
             }
             {
                 final Item item = app.items[29];
                 assertEquals("Conjured item 0", item.name);
-                assertEquals(8, item.quality);
+                assertEquals(6, item.quality);
                 assertEquals(-1, item.sellIn);
             }
             {
                 final Item item = app.items[30];
                 assertEquals("Conjured item -1", item.name);
-                assertEquals(8, item.quality);
+                assertEquals(6, item.quality);
                 assertEquals(-2, item.sellIn);
             }
         }
