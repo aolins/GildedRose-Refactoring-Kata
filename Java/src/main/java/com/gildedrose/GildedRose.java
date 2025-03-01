@@ -27,6 +27,8 @@ class GildedRose {
                     item.quality = item.quality + 2;
                 }
                 item.sellIn = item.sellIn - 1;
+            } else if (item.name.startsWith("Sulfuras")) {
+
             } else {
 
 
