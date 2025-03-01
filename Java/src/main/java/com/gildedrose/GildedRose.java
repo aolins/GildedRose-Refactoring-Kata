@@ -8,8 +8,7 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        for (int i = 0; i < items.length; i++) {
-            final Item item = items [i];
+        for (Item item: items) {
             final String itemName = item.name;
             final int initialQuality = item.quality;
             final int initialSellIn = item.sellIn;
