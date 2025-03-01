@@ -21,6 +21,7 @@ class GildedRoseTest {
             new Item("Sulfuras, Hand of Ragnaros", 0, 50),
             new Item("Aged Brie", -1, 29),
             new Item("Aged Brie", -9, 49),
+            new Item("Backstage passes to a TAFKAL80ETC concert", 1, 49),
         };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -107,6 +108,12 @@ class GildedRoseTest {
             assertEquals("Aged Brie", item.name);
             assertEquals(50, item.quality);
             assertEquals(-10, item.sellIn);
+        }
+        {
+            final Item item = app.items[12];
+            assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
+            assertEquals(50, item.quality);
+            assertEquals(0, item.sellIn);
         }
 
 
