@@ -8,56 +8,52 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        for (Item item: items) {
-            final String itemName = item.name;
-            final int initialQuality = item.quality;
-            final int initialSellIn = item.sellIn;
-
-            if (!itemName.equals("Aged Brie")
-                    && !itemName.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                if (initialQuality > 0) {
-                    if (!itemName.equals("Sulfuras, Hand of Ragnaros")) {
-                        item.quality = initialQuality - 1;
+        for (int i = 0; i < items.length; i++) {
+            if (!items[i].name.equals("Aged Brie")
+                    && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                if (items[i].quality > 0) {
+                    if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+                        items[i].quality = items[i].quality - 1;
                     }
                 }
             } else {
-                if (initialQuality < 50) {
-                    item.quality = initialQuality + 1;
+                if (items[i].quality < 50) {
+                    items[i].quality = items[i].quality + 1;
 
-                    if (itemName.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (initialSellIn < 11) {
-                            if (initialQuality < 50) {
-                                item.quality = initialQuality + 1;
+                    if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                        if (items[i].sellIn < 11) {
+                            if (items[i].quality < 50) {
+                                items[i].quality = items[i].quality + 1;
                             }
                         }
 
-                        if (initialSellIn < 6) {
-                            if (initialQuality < 50) {
-                                item.quality = initialQuality + 1;
+                        if (items[i].sellIn < 6) {
+                            if (items[i].quality < 50) {
+                                items[i].quality = items[i].quality + 1;
                             }
                         }
                     }
                 }
             }
 
-            if (!itemName.equals("Sulfuras, Hand of Ragnaros")) {
-                item.sellIn = initialSellIn - 1;
+            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+                items[i].sellIn = items[i].sellIn - 1;
             }
 
-            if (initialSellIn < 0) {
-                if (!itemName.equals("Aged Brie")) {
-                    if (!itemName.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (initialQuality > 0) {
-                            if (!itemName.equals("Sulfuras, Hand of Ragnaros")) {
-                                item.quality = initialQuality - 1;
+            if (items[i].sellIn < 0) {
+                if (!items[i].name.equals("Aged Brie")) {
+                    if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                        if (items[i].quality > 0) {
+                            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+                                items[i].quality = items[i].quality - 1;
                             }
                         }
                     } else {
-                        item.quality = 0;
+                        items[i].quality = items[i].quality - items[i].quality;
                     }
                 } else {
-                    if (initialQuality < 50) {
-                        item.quality = initialQuality + 1;
+                    if (items[i].quality < 50) {
+                        items[i].quality = items[i].quality + 1;
                     }
                 }
             }

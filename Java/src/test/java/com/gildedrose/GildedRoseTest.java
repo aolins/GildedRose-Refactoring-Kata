@@ -31,7 +31,7 @@ class GildedRoseTest {
             final int i = 2;
             assertEquals("past due date", app.items[i].name);
             assertEquals(0, app.items[i].quality);
-            assertEquals(2, app.items[i].sellIn);
+            assertEquals(-2, app.items[i].sellIn);
         }
 
     }
