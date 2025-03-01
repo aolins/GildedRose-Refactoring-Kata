@@ -36,6 +36,10 @@ class GildedRoseTest {
             new Item("Backstage passes to a TAFKAL80ETC concert", 0, 30),
             new Item("Backstage passes to a TAFKAL80ETC concert", -1, 30),
             new Item("Backstage passes to a TAFKAL80ETC concert", -1, 0),
+            new Item("quality of 62", 2, 62),
+            new Item("quality of 61", 1, 61),
+            new Item("quality of 60", 0, 60),
+            new Item("quality of 60-1", -1, 59),
 
         };
         GildedRose app = new GildedRose(items);
@@ -141,84 +145,115 @@ class GildedRoseTest {
             assertEquals(9, item.sellIn);
         }
         {
-            final Item item = app.items[15];
-            assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
-            assertEquals(32, item.quality);
-            assertEquals(8, item.sellIn);
-        }
-        {
-            final Item item = app.items[16];
-            assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
-            assertEquals(32, item.quality);
-            assertEquals(7, item.sellIn);
-        }
+            {
+                final Item item = app.items[15];
+                assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
+                assertEquals(32, item.quality);
+                assertEquals(8, item.sellIn);
+            }
+            {
+                final Item item = app.items[16];
+                assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
+                assertEquals(32, item.quality);
+                assertEquals(7, item.sellIn);
+            }
 
-        {
-            final Item item = app.items[17];
-            assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
-            assertEquals(32, item.quality);
-            assertEquals(6, item.sellIn);
-        }
-        {
-            final Item item = app.items[18];
-            assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
-            assertEquals(32, item.quality);
-            assertEquals(5, item.sellIn);
-        }
-        {
-            final Item item = app.items[19];
-            assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
-            assertEquals(33, item.quality);
-            assertEquals(4, item.sellIn);
-        }
+            {
+                final Item item = app.items[17];
+                assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
+                assertEquals(32, item.quality);
+                assertEquals(6, item.sellIn);
+            }
+            {
+                final Item item = app.items[18];
+                assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
+                assertEquals(32, item.quality);
+                assertEquals(5, item.sellIn);
+            }
+            {
+                final Item item = app.items[19];
+                assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
+                assertEquals(33, item.quality);
+                assertEquals(4, item.sellIn);
+            }
 
-        {
-            final Item item = app.items[20];
-            assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
-            assertEquals(33, item.quality);
-            assertEquals(3, item.sellIn);
-        }
-        {
-            final Item item = app.items[21];
-            assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
-            assertEquals(33, item.quality);
-            assertEquals(2, item.sellIn);
-        }
-        {
-            final Item item = app.items[22];
-            assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
-            assertEquals(33, item.quality);
-            assertEquals(1, item.sellIn);
-        }
-        {
-            final Item item = app.items[23];
-            assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
-            assertEquals(33, item.quality);
-            assertEquals(0, item.sellIn);
-        }
-        {
-            final Item item = app.items[24];
-            assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
-            assertEquals(0, item.quality);
-            assertEquals(-1, item.sellIn);
-        }
+            {
+                final Item item = app.items[20];
+                assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
+                assertEquals(33, item.quality);
+                assertEquals(3, item.sellIn);
+            }
+            {
+                final Item item = app.items[21];
+                assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
+                assertEquals(33, item.quality);
+                assertEquals(2, item.sellIn);
+            }
+            {
+                final Item item = app.items[22];
+                assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
+                assertEquals(33, item.quality);
+                assertEquals(1, item.sellIn);
+            }
+            {
+                final Item item = app.items[23];
+                assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
+                assertEquals(33, item.quality);
+                assertEquals(0, item.sellIn);
+            }
+            {
+                final Item item = app.items[24];
+                assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
+                assertEquals(0, item.quality);
+                assertEquals(-1, item.sellIn);
+            }
 
-        {
-            final Item item = app.items[25];
-            assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
-            assertEquals(0, item.quality);
-            assertEquals(-2, item.sellIn);
+            {
+                final Item item = app.items[25];
+                assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
+                assertEquals(0, item.quality);
+                assertEquals(-2, item.sellIn);
+            }
+            {
+                final Item item = app.items[26];
+                assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
+                assertEquals(0, item.quality);
+                assertEquals(-2, item.sellIn);
+            }
         }
         {
-            final Item item = app.items[26];
-            assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
-            assertEquals(0, item.quality);
-            assertEquals(-2, item.sellIn);
+            /**
+             *
+             *
+             */
+
+            {
+                final Item item = app.items[27];
+                assertEquals("quality of 62", item.name);
+                assertEquals(61, item.quality);
+                assertEquals(1, item.sellIn);
+            }
+            {
+                final Item item = app.items[28];
+                assertEquals("quality of 61", item.name);
+                assertEquals(60, item.quality);
+                assertEquals(0, item.sellIn);
+            }
+            {
+                final Item item = app.items[29];
+                assertEquals("quality of 60", item.name);
+                assertEquals(58, item.quality);
+                assertEquals(-1, item.sellIn);
+            }
+            {
+                final Item item = app.items[30];
+                assertEquals("quality of 60-1", item.name);
+                assertEquals(57, item.quality);
+                assertEquals(-2, item.sellIn);
+            }
+
+
         }
-
-
-
-
     }
 
 }
