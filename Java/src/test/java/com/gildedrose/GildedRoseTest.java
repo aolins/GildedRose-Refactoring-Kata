@@ -42,6 +42,18 @@ class GildedRoseTest {
             new Item("Conjured item 0", 0, 10),
             new Item("Conjured item -1", -1, 10),
 
+            new Item("Conjured item 2.2", 2, 2),
+            new Item("Conjured item 2.1", 2, 1),
+            new Item("Conjured item 2.0", 2, 0),
+
+            new Item("Conjured item -2.5", -2, 5),
+            new Item("Conjured item -2.4", -2, 4),
+            new Item("Conjured item -2.3", -2, 3),
+            new Item("Conjured item -2.2", -2, 2),
+            new Item("Conjured item -2.1", -2, 1),
+            new Item("Conjured item -2.0", -2, 0),
+
+
 
         };
         GildedRose app = new GildedRose(items);
@@ -247,6 +259,65 @@ class GildedRoseTest {
                 assertEquals("Conjured item -1", item.name);
                 assertEquals(6, item.quality);
                 assertEquals(-2, item.sellIn);
+            }
+
+
+            {
+                final Item item = app.items[31];
+                assertEquals("Conjured item 2.2", item.name);
+                assertEquals(0, item.quality);
+                assertEquals(1, item.sellIn);
+            }
+
+            {
+                final Item item = app.items[32];
+                assertEquals("Conjured item 2.1", item.name);
+                assertEquals(0, item.quality);
+                assertEquals(1, item.sellIn);
+            }
+
+            {
+                final Item item = app.items[33];
+                assertEquals("Conjured item 2.0", item.name);
+                assertEquals(0, item.quality);
+                assertEquals(1, item.sellIn);
+            }
+
+            {
+                final Item item = app.items[34];
+                assertEquals("Conjured item -2.5", item.name);
+                assertEquals(1, item.quality);
+                assertEquals(-3, item.sellIn);
+            }
+            {
+                final Item item = app.items[35];
+                assertEquals("Conjured item -2.4", item.name);
+                assertEquals(0, item.quality);
+                assertEquals(-3, item.sellIn);
+            }
+            {
+                final Item item = app.items[36];
+                assertEquals("Conjured item -2.3", item.name);
+                assertEquals(0, item.quality);
+                assertEquals(-3, item.sellIn);
+            }
+            {
+                final Item item = app.items[37];
+                assertEquals("Conjured item -2.2", item.name);
+                assertEquals(0, item.quality);
+                assertEquals(-3, item.sellIn);
+            }
+            {
+                final Item item = app.items[38];
+                assertEquals("Conjured item -2.1", item.name);
+                assertEquals(0, item.quality);
+                assertEquals(-3, item.sellIn);
+            }
+            {
+                final Item item = app.items[39];
+                assertEquals("Conjured item -2.0", item.name);
+                assertEquals(0, item.quality);
+                assertEquals(-3, item.sellIn);
             }
         }
     }
