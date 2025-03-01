@@ -37,6 +37,11 @@ class GildedRoseTest {
             new Item("Backstage passes to a TAFKAL80ETC concert", -1, 30),
             new Item("Backstage passes to a TAFKAL80ETC concert", -1, 0),
 
+            new Item("Conjured item 2", 2, 10),
+            new Item("Conjured item 1", 1, 10),
+            new Item("Conjured item 0", 0, 10),
+            new Item("Conjured item -1", -1, 10),
+
 
         };
         GildedRose app = new GildedRose(items);
@@ -215,6 +220,32 @@ class GildedRoseTest {
                 final Item item = app.items[26];
                 assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
                 assertEquals(0, item.quality);
+                assertEquals(-2, item.sellIn);
+            }
+        }
+        {
+            {
+                final Item item = app.items[27];
+                assertEquals("Conjured item 2", item.name);
+                assertEquals(9, item.quality);
+                assertEquals(1, item.sellIn);
+            }
+            {
+                final Item item = app.items[28];
+                assertEquals("Conjured item 1", item.name);
+                assertEquals(9, item.quality);
+                assertEquals(0, item.sellIn);
+            }
+            {
+                final Item item = app.items[29];
+                assertEquals("Conjured item 0", item.name);
+                assertEquals(8, item.quality);
+                assertEquals(-1, item.sellIn);
+            }
+            {
+                final Item item = app.items[30];
+                assertEquals("Conjured item -1", item.name);
+                assertEquals(8, item.quality);
                 assertEquals(-2, item.sellIn);
             }
         }
