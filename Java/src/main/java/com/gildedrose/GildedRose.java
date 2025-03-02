@@ -65,6 +65,7 @@ class GildedRose {
             item.quality = 50;
         }
     }
+
     private static void updateSulfuras(Item item){}
 
     public void updateQuality() {
