@@ -20,6 +20,44 @@ class GildedRose {
         }
     }
 
+    private static void updateBackstagePasses(Item item){
+        if (item.name.startsWith("Backstage passes")) {
+            if (item.sellIn > 10) {
+                item.quality = item.quality + 1;
+            } else if (item.sellIn <= 10 && item.sellIn > 5){
+                item.quality = item.quality + 2;
+            } else if (item.sellIn <= 5 && item.sellIn > 0){
+                item.quality = item.quality + 3;
+            } else {// if (item.sellIn <= 0){
+                item.quality = 0;
+            }
+            item.sellIn = item.sellIn - 1;
+            updateGlobal(item);
+        }
+    }
+
+    private static void updateAgedBrie(Item item){
+        if (item.name.startsWith("Aged Brie")) {
+            if (item.sellIn > 0) {
+                item.quality = item.quality + 1;
+            } else {
+                item.quality = item.quality + 2;
+            }
+            item.sellIn = item.sellIn - 1;
+            updateGlobal(item);
+        }
+    }
+
+    private static void updateCommonItem(Item item){
+        if (item.sellIn > 0){
+            item.quality = item.quality - 1;
+        } else {
+            item.quality = item.quality - 2;
+        }
+        item.sellIn = item.sellIn - 1;
+        updateGlobal(item);
+    }
+
     private static void updateGlobal(Item item){
         if (item.quality < 0){
             item.quality = 0;
@@ -27,48 +65,20 @@ class GildedRose {
             item.quality = 50;
         }
     }
+    private static void updateSulfuras(Item item){}
 
     public void updateQuality() {
         for (Item item: items) {
-
-
-
             if (item.name.startsWith("Conjured")){
                 updateConjured(item);
            } else if (item.name.startsWith("Aged Brie")) {
-                if (item.sellIn > 0){
-                    item.quality = item.quality + 1;
-                } else {
-                    item.quality = item.quality + 2;
-                }
-                item.sellIn = item.sellIn - 1;
+                updateAgedBrie(item);
             } else if (item.name.startsWith("Sulfuras")) {
+                updateSulfuras(item);
             } else if (item.name.startsWith("Backstage passes")) {
-                if (item.sellIn > 10) {
-                    item.quality = item.quality + 1;
-                } else if (item.sellIn <= 10 && item.sellIn > 5){
-                    item.quality = item.quality + 2;
-                } else if (item.sellIn <= 5 && item.sellIn > 0){
-                    item.quality = item.quality + 3;
-                } else {// if (item.sellIn <= 0){
-                    item.quality = 0;
-                }
-                item.sellIn = item.sellIn - 1;
-
-            } else if(true) {
-                if (item.sellIn > 0){
-                    item.quality = item.quality - 1;
-                } else {
-                    item.quality = item.quality - 2;
-                }
-                item.sellIn = item.sellIn - 1;
-            }
-
-            // global rules
-            if (item.quality < 0){
-                item.quality = 0;
-            }else if (item.quality > 50){
-                item.quality = 50;
+                updateBackstagePasses(item);
+            } else{
+                updateCommonItem(item);
             }
         }
     }
